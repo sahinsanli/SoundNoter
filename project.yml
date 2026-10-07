@@ -1,0 +1,42 @@
+name: SoundNoter
+options:
+  bundleIdPrefix: com.sahinsanli
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+
+packages:
+  Firebase:
+    url: https://github.com/firebase/firebase-ios-sdk
+    from: 11.0.0
+
+targets:
+  SoundNoter:
+    type: application
+    platform: iOS
+    sources:
+      - path: SoundNoter
+    dependencies:
+      - package: Firebase
+        products:
+          - FirebaseCore
+          - FirebaseAuth
+    info:
+      path: SoundNoter/Info.plist
+      properties:
+        CFBundleDisplayName: SoundNoter
+        UILaunchScreen:
+          UIColorName: ""
+        NSMicrophoneUsageDescription: SoundNoter ses kaydı almak için mikrofonu kullanır.
+        NSSpeechRecognitionUsageDescription: SoundNoter transkripsiyon için konuşma tanımayı kullanır.
+        GEMINI_API_KEY: ""
+        UIBackgroundModes: []
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        ITSAppUsesNonExemptEncryption: false
+    settings:
+      base:
+        SWIFT_VERSION: "5.10"
+        TARGETED_DEVICE_FAMILY: "1"
+        CODE_SIGN_STYLE: Automatic
+        CODE_SIGNING_ALLOWED: "NO"

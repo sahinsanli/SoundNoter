@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00F196ABF3DD9810421C0DB6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D831D5184B3FAD4F27B784F /* ContentView.swift */; };
+		10AA8F3A952CE926A2F62E60 /* AudioFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1D361E60EC29C893064F75 /* AudioFileManager.swift */; };
+		11A0EA6078C37974471721A3 /* LoginOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3007664C24BAD8A0335138D0 /* LoginOptionsView.swift */; };
+		1FAD43406A922A59DE56BAF5 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8D137CCBD915D950546B6 /* OnboardingView.swift */; };
+		27CF6FEC6A871500677146CB /* EmailAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E2FA0BA480416539854B2C /* EmailAuthView.swift */; };
+		399C4EE404A82557C5E8DA0A /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0C995EF5A6DB05702D0F3A /* AIService.swift */; };
+		3B118246886674782F7A8E17 /* VoiceNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1808C72DCFA3239884D05684 /* VoiceNote.swift */; };
+		3D2C3BAD177B80C65CDE4AA9 /* AudioChunkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CC43A3365B9D9A53A2B8D5 /* AudioChunkingService.swift */; };
+		45793EBC9C4E9D6C0C7C9DA4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7ADABF170833344FEE055C41 /* FirebaseAuth */; };
+		4FA69B5F3137F74D12E380ED /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 764E86F105897D8C0677BF8C /* FirebaseCore */; };
+		537D8586141A0CFE358486E2 /* AudioPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F66D5EF4284842D740075F /* AudioPlayerService.swift */; };
+		5B3B9BCFB927436AADFDD4F5 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8CF954D3A8F4E3478826E4 /* Theme.swift */; };
+		6FE68B7C242F6CD049F8B877 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76FDD663E2D127AF40F745D6 /* GoogleService-Info.plist */; };
+		7799043CEA586D113AB0D83C /* SpeechTimestampService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A791F734FEE193B7BADD5A90 /* SpeechTimestampService.swift */; };
+		80645D3F7D6C21F263BA63D4 /* RecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FF8CF2AD391AA66A5C91BA /* RecordingView.swift */; };
+		84766A67FE317820A9EC0E1A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF2CDC40FC18A1E5D1FAFF /* AuthService.swift */; };
+		8FF1E6874ECFA82BF9776125 /* TranscriptionChunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3305A444BEBA3CA70BC04FF3 /* TranscriptionChunk.swift */; };
+		B44868AA904D7726A32D0E5F /* MainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52C6306FBF8DDB5274ECC95 /* MainListView.swift */; };
+		BD1696C1A5633EA7844E9BD6 /* SoundNoterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F9CCFCA62B692A5ADD71B7 /* SoundNoterApp.swift */; };
+		C1D0D4CDF29673BD42EE2813 /* VoiceNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A5644C1B921AF045B523B /* VoiceNoteViewModel.swift */; };
+		DD98AB5CE07B8A586E4897E0 /* AudioRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DF2FFE91AA9332E5D653F4 /* AudioRecorderService.swift */; };
+		E49096485EDA64425419EC57 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79D8AB7301E52A007B25379 /* AppState.swift */; };
+		E8D7B113BDD3181CDA37D9B7 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E49A8C9728BCD594EC62A1 /* SplashView.swift */; };
+		F641910B3E40DE20F406B50B /* NoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DAE6D2FB4A3AE62F0D8874 /* NoteDetailView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1808C72DCFA3239884D05684 /* VoiceNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceNote.swift; sourceTree = "<group>"; };
+		1B0C995EF5A6DB05702D0F3A /* AIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIService.swift; sourceTree = "<group>"; };
+		20E2FA0BA480416539854B2C /* EmailAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthView.swift; sourceTree = "<group>"; };
+		2A1D361E60EC29C893064F75 /* AudioFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFileManager.swift; sourceTree = "<group>"; };
+		3007664C24BAD8A0335138D0 /* LoginOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOptionsView.swift; sourceTree = "<group>"; };
+		3305A444BEBA3CA70BC04FF3 /* TranscriptionChunk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptionChunk.swift; sourceTree = "<group>"; };
+		5F8CF954D3A8F4E3478826E4 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		60EF2CDC40FC18A1E5D1FAFF /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		72E49A8C9728BCD594EC62A1 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		76375C12F65E21C98535E0D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		76FDD663E2D127AF40F745D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		90FF8CF2AD391AA66A5C91BA /* RecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingView.swift; sourceTree = "<group>"; };
+		97CC43A3365B9D9A53A2B8D5 /* AudioChunkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioChunkingService.swift; sourceTree = "<group>"; };
+		99DF2FFE91AA9332E5D653F4 /* AudioRecorderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderService.swift; sourceTree = "<group>"; };
+		9D831D5184B3FAD4F27B784F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A791F734FEE193B7BADD5A90 /* SpeechTimestampService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechTimestampService.swift; sourceTree = "<group>"; };
+		B79D8AB7301E52A007B25379 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		C4DAE6D2FB4A3AE62F0D8874 /* NoteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailView.swift; sourceTree = "<group>"; };
+		C52C6306FBF8DDB5274ECC95 /* MainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListView.swift; sourceTree = "<group>"; };
+		D85948F2D4BB780FC2FC0207 /* SoundNoter.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SoundNoter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2F9CCFCA62B692A5ADD71B7 /* SoundNoterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundNoterApp.swift; sourceTree = "<group>"; };
+		EC3A5644C1B921AF045B523B /* VoiceNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceNoteViewModel.swift; sourceTree = "<group>"; };
+		F4F66D5EF4284842D740075F /* AudioPlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerService.swift; sourceTree = "<group>"; };
+		F9A8D137CCBD915D950546B6 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		99731A80FBB0CC5DE4E0F7E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FA69B5F3137F74D12E380ED /* FirebaseCore in Frameworks */,
+				45793EBC9C4E9D6C0C7C9DA4 /* FirebaseAuth in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A77DEB7D5F7F7776CE2D695 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1B0C995EF5A6DB05702D0F3A /* AIService.swift */,
+				97CC43A3365B9D9A53A2B8D5 /* AudioChunkingService.swift */,
+				2A1D361E60EC29C893064F75 /* AudioFileManager.swift */,
+				F4F66D5EF4284842D740075F /* AudioPlayerService.swift */,
+				99DF2FFE91AA9332E5D653F4 /* AudioRecorderService.swift */,
+				60EF2CDC40FC18A1E5D1FAFF /* AuthService.swift */,
+				A791F734FEE193B7BADD5A90 /* SpeechTimestampService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		48324D46FEC88B93928E35FD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				EC3A5644C1B921AF045B523B /* VoiceNoteViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		687464A5EEA6F1B3B74BEE95 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D85948F2D4BB780FC2FC0207 /* SoundNoter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C22E19BD8F27BCFC283457CE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3305A444BEBA3CA70BC04FF3 /* TranscriptionChunk.swift */,
+				1808C72DCFA3239884D05684 /* VoiceNote.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D01BF6B7042381768EC64D56 = {
+			isa = PBXGroup;
+			children = (
+				F121B8013E86598335AF35F8 /* SoundNoter */,
+				687464A5EEA6F1B3B74BEE95 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F121B8013E86598335AF35F8 /* SoundNoter */ = {
+			isa = PBXGroup;
+			children = (
+				B79D8AB7301E52A007B25379 /* AppState.swift */,
+				9D831D5184B3FAD4F27B784F /* ContentView.swift */,
+				76FDD663E2D127AF40F745D6 /* GoogleService-Info.plist */,
+				76375C12F65E21C98535E0D8 /* Info.plist */,
+				E2F9CCFCA62B692A5ADD71B7 /* SoundNoterApp.swift */,
+				5F8CF954D3A8F4E3478826E4 /* Theme.swift */,
+				C22E19BD8F27BCFC283457CE /* Models */,
+				1A77DEB7D5F7F7776CE2D695 /* Services */,
+				48324D46FEC88B93928E35FD /* ViewModels */,
+				F53B4519B4FFA3988DBD05AE /* Views */,
+			);
+			path = SoundNoter;
+			sourceTree = "<group>";
+		};
+		F53B4519B4FFA3988DBD05AE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				20E2FA0BA480416539854B2C /* EmailAuthView.swift */,
+				3007664C24BAD8A0335138D0 /* LoginOptionsView.swift */,
+				C52C6306FBF8DDB5274ECC95 /* MainListView.swift */,
+				C4DAE6D2FB4A3AE62F0D8874 /* NoteDetailView.swift */,
+				F9A8D137CCBD915D950546B6 /* OnboardingView.swift */,
+				90FF8CF2AD391AA66A5C91BA /* RecordingView.swift */,
+				72E49A8C9728BCD594EC62A1 /* SplashView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2E08DFF0DD848284BB2475AA /* SoundNoter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F3AF2A94F6CEA7F3170815E /* Build configuration list for PBXNativeTarget "SoundNoter" */;
+			buildPhases = (
+				8106A3930222BCF114AC8C64 /* Sources */,
+				3890FF1480F64530AEEDD736 /* Resources */,
+				99731A80FBB0CC5DE4E0F7E3 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SoundNoter;
+			packageProductDependencies = (
+				764E86F105897D8C0677BF8C /* FirebaseCore */,
+				7ADABF170833344FEE055C41 /* FirebaseAuth */,
+			);
+			productName = SoundNoter;
+			productReference = D85948F2D4BB780FC2FC0207 /* SoundNoter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		80EC5C48648C7439096C6842 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					2E08DFF0DD848284BB2475AA = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B1ABFCC9D00F91497E5C8E3E /* Build configuration list for PBXProject "SoundNoter" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = D01BF6B7042381768EC64D56;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				93EA2FAA2B5C91A42753075A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 687464A5EEA6F1B3B74BEE95 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2E08DFF0DD848284BB2475AA /* SoundNoter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3890FF1480F64530AEEDD736 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FE68B7C242F6CD049F8B877 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8106A3930222BCF114AC8C64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				399C4EE404A82557C5E8DA0A /* AIService.swift in Sources */,
+				E49096485EDA64425419EC57 /* AppState.swift in Sources */,
+				3D2C3BAD177B80C65CDE4AA9 /* AudioChunkingService.swift in Sources */,
+				10AA8F3A952CE926A2F62E60 /* AudioFileManager.swift in Sources */,
+				537D8586141A0CFE358486E2 /* AudioPlayerService.swift in Sources */,
+				DD98AB5CE07B8A586E4897E0 /* AudioRecorderService.swift in Sources */,
+				84766A67FE317820A9EC0E1A /* AuthService.swift in Sources */,
+				00F196ABF3DD9810421C0DB6 /* ContentView.swift in Sources */,
+				27CF6FEC6A871500677146CB /* EmailAuthView.swift in Sources */,
+				11A0EA6078C37974471721A3 /* LoginOptionsView.swift in Sources */,
+				B44868AA904D7726A32D0E5F /* MainListView.swift in Sources */,
+				F641910B3E40DE20F406B50B /* NoteDetailView.swift in Sources */,
+				1FAD43406A922A59DE56BAF5 /* OnboardingView.swift in Sources */,
+				80645D3F7D6C21F263BA63D4 /* RecordingView.swift in Sources */,
+				BD1696C1A5633EA7844E9BD6 /* SoundNoterApp.swift in Sources */,
+				7799043CEA586D113AB0D83C /* SpeechTimestampService.swift in Sources */,
+				E8D7B113BDD3181CDA37D9B7 /* SplashView.swift in Sources */,
+				5B3B9BCFB927436AADFDD4F5 /* Theme.swift in Sources */,
+				8FF1E6874ECFA82BF9776125 /* TranscriptionChunk.swift in Sources */,
+				3B118246886674782F7A8E17 /* VoiceNote.swift in Sources */,
+				C1D0D4CDF29673BD42EE2813 /* VoiceNoteViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B97895BAB2D2F69A849FC618 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SoundNoter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sahinsanli.SoundNoter;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.10;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		CE816A33C20848737EECD160 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		D5EAF541333817A02EE95651 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F7564123174E9A1D2ED62ABA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SoundNoter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sahinsanli.SoundNoter;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.10;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4F3AF2A94F6CEA7F3170815E /* Build configuration list for PBXNativeTarget "SoundNoter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7564123174E9A1D2ED62ABA /* Debug */,
+				B97895BAB2D2F69A849FC618 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B1ABFCC9D00F91497E5C8E3E /* Build configuration list for PBXProject "SoundNoter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5EAF541333817A02EE95651 /* Debug */,
+				CE816A33C20848737EECD160 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		93EA2FAA2B5C91A42753075A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		764E86F105897D8C0677BF8C /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93EA2FAA2B5C91A42753075A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		7ADABF170833344FEE055C41 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93EA2FAA2B5C91A42753075A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 80EC5C48648C7439096C6842 /* Project object */;
+}

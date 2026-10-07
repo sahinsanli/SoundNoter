@@ -1,0 +1,16 @@
+# Xcode
+DerivedData/
+build/
+*.xcuserstate
+xcuserdata/
+*.xcscmblueprint
+
+# SPM
+.build/
+
+# Secrets — kullanıcıya özel, repo dışında tutulur
+SoundNoter/GoogleService-Info.plist
+GoogleService-Info.plist
+
+# macOS
+.DS_Store
