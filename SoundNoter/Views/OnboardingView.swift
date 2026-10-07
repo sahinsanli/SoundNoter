@@ -23,7 +23,7 @@ struct OnboardingView: View {
         ZStack {
             Theme.background.ignoresSafeArea()
 
-            VStack {
+            VStack(spacing: 0) {
                 TabView(selection: $currentPage) {
                     ForEach(Array(pages.enumerated()), id: \.offset) { index, page in
                         VStack(spacing: 28) {
@@ -46,6 +46,7 @@ struct OnboardingView: View {
                     }
                 }
                 .tabViewStyle(.page(indexDisplayMode: .always))
+                .frame(maxHeight: .infinity)
 
                 Button {
                     withAnimation {
@@ -58,6 +59,7 @@ struct OnboardingView: View {
                         .padding(.horizontal, 44)
                         .padding(.vertical, 14)
                         .glassmorphicBackground(cornerRadius: 100)
+                        .contentShape(Rectangle())
                 }
                 .padding(.bottom, 48)
             }

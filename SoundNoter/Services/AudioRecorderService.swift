@@ -23,23 +23,38 @@ final class AudioRecorderService: NSObject, ObservableObject {
     // MARK: - İzin
 
     func requestPermission() async -> Bool {
-        await withCheckedContinuation { continuation in
-            AVAudioSession.sharedInstance().requestRecordPermission { granted in
-                continuation.resume(returning: granted)
+        // iOS 17+: AVAudioApplication (eski requestRecordPermission deprecated).
+        if #available(iOS 17.0, *) {
+            return await AVAudioApplication.requestRecordPermission()
+        } else {
+            return await withCheckedContinuation { continuation in
+                AVAudioSession.sharedInstance().requestRecordPermission { granted in
+                    continuation.resume(returning: granted)
+                }
             }
         }
     }
 
     // MARK: - Kayıt
 
-    /// Mikrofonu açar ve Documents dizininde yeni bir m4a dosyasına kaydetmeye başlar.
+    /// Mikrofonu açar ve Recordings dizininde yeni bir m4a dosyasına kaydetmeye başlar.
+    /// Zaten kayıt aktifse yeniden başlatmaz (çift kayıt koruması).
     func startRecording() throws {
+        guard !isRecording else {
+            throw NSError(
+                domain: "AudioRecorderService",
+                code: 3,
+                userInfo: [NSLocalizedDescriptionKey: "Kayıt zaten aktif"]
+            )
+        }
+
         let session = AVAudioSession.sharedInstance()
         try session.setCategory(.playAndRecord, mode: .default)
         try session.setActive(true)
 
+        // Doğrudan kalıcı konuma kaydet — ViewModel'de taşıma gerekmez.
         let fileName = "recording-\(UUID().uuidString).m4a"
-        let url = AudioFileManager.documentsDirectory.appendingPathComponent(fileName)
+        let url = AudioFileManager.recordingsDirectory.appendingPathComponent(fileName)
 
         let settings: [String: Any] = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),

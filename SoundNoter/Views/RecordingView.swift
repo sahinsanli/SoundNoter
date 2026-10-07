@@ -61,14 +61,13 @@ struct RecordingView: View {
                         .glassmorphicBackground(cornerRadius: 30)
                 }
 
-                // Kaydet / Durdur
+                // Kaydet / Durdur — .task kaydı otomatik başlatır; burada
+                // yalnızca durdurma (çift başlatma riski yok).
                 Button {
                     Task {
                         if viewModel.isRecording {
                             await viewModel.stopRecordingAndProcess(modelContext: modelContext)
                             recordingFinished = true
-                        } else {
-                            await viewModel.startRecording()
                         }
                     }
                 } label: {

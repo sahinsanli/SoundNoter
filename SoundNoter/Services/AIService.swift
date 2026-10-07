@@ -69,6 +69,8 @@ final class AIService {
             throw AIServiceError.notConfigured
         }
 
+        // Gemini tek bir schema OBJESİ bekler (dizi değil); nested property
+        // şeması: object → summary: string, key_points: array<string>.
         struct TextPart: Codable {
             let text: String
         }
@@ -81,15 +83,15 @@ final class AIService {
         }
         struct GenerationConfig: Codable {
             let responseMimeType: String
-            let responseSchema: [Schema]
+            let responseSchema: SchemaObject
         }
-        struct Schema: Codable {
+        struct SchemaObject: Codable {
             let type: String
-            let properties: [String: SchemaProperty]?
-            let items: SchemaItems?
+            let properties: [String: SchemaProperty]
         }
         struct SchemaProperty: Codable {
             let type: String
+            let items: SchemaItems?
         }
         struct SchemaItems: Codable {
             let type: String
@@ -109,13 +111,16 @@ final class AIService {
             contents: [Content(parts: [TextPart(text: prompt)])],
             generationConfig: GenerationConfig(
                 responseMimeType: "application/json",
-                responseSchema: [
-                    Schema(type: "object", properties: [
-                        "summary": SchemaProperty(type: "string"),
-                        "key_points": SchemaProperty(type: "array")
-                    ], items: nil),
-                    Schema(type: "array", properties: nil, items: SchemaItems(type: "string"))
-                ]
+                responseSchema: SchemaObject(
+                    type: "object",
+                    properties: [
+                        "summary": SchemaProperty(type: "string", items: nil),
+                        "key_points": SchemaProperty(
+                            type: "array",
+                            items: SchemaItems(type: "string")
+                        )
+                    ]
+                )
             )
         )
 

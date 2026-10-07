@@ -28,6 +28,8 @@ final class VoiceNoteViewModel {
 
     let recorder: AudioRecorderService
     let player: AudioPlayerService
+    /// Kaydın gerçek başlangıç anı — süre hesabı timer drift'inden etkilenmesin.
+    private var recordingStartDate: Date?
     let aiService: AIService
     let timestampService: SpeechTimestampService
 
@@ -82,13 +84,9 @@ final class VoiceNoteViewModel {
             return nil
         }
 
-        // Kayıt dosyasını kalıcı konumuna taşı.
+        // Kayıt zaten kalıcı konumda (AudioRecorderService doğrudan
+        // Recordings/ altına yazar) — taşıma yok, kayıp riski yok.
         let fileName = fileURL.lastPathComponent
-        let destination = AudioFileManager.url(for: fileName)
-        if fileURL.standardizedFileURL != destination.standardizedFileURL {
-            try? FileManager.default.moveItem(at: fileURL, to: destination)
-        }
-
         let duration = recorder.recordingTime
 
         // Yeni VoiceNote oluştur (Model) ve hemen kaydet — kullanıcı kaydı anında listede görsün.
@@ -213,11 +211,12 @@ final class VoiceNoteViewModel {
     // MARK: - Kayıt gözlemi (waveform + süre)
 
     private func startObservingRecorder() {
+        recordingStartDate = Date() // timer drift'i yok say — gerçek zamandan hesapla
         levelTimer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { [weak self] _ in
             guard let self else { return }
             self.audioLevel = self.recorder.averagePower
-            if self.isRecording {
-                self.elapsedRecordingTime += 0.05
+            if self.isRecording, let start = self.recordingStartDate {
+                self.elapsedRecordingTime = Date().timeIntervalSince(start)
             }
         }
     }

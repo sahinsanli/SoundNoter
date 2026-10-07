@@ -12,6 +12,7 @@ struct MainListView: View {
 
     @State private var showRecording = false
     @State private var selectedNote: VoiceNote?
+    @State private var noteToDelete: VoiceNote?
 
     var body: some View {
         ZStack {
@@ -37,8 +38,25 @@ struct MainListView: View {
             }
             .presentationBackground(Theme.background)
         }
+        .confirmationDialog(
+            "Notu sil",
+            isPresented: Binding(
+                get: { noteToDelete != nil },
+                set: { if !$0 { noteToDelete = nil } }
+            ),
+            titleVisibility: .visible
+        ) {
+            Button("Sil", role: .destructive) {
+                if let note = noteToDelete {
+                    viewModel.deleteNote(note, modelContext: modelContext)
+                    noteToDelete = nil
+                }
+            }
+            Button("Vazgeç", role: .cancel) { noteToDelete = nil }
+        } message: {
+            Text("Bu not ve ses dosyası kalıcı olarak silinecek.")
+        }
     }
-
     // MARK: - Liste
 
     private var notesList: some View {
@@ -51,6 +69,13 @@ struct MainListView: View {
                         NoteCardView(note: note)
                     }
                     .buttonStyle(.plain)
+                    .contextMenu {
+                        Button(role: .destructive) {
+                            noteToDelete = note
+                        } label: {
+                            Label("Sil", systemImage: "trash")
+                        }
+                    }
                 }
             }
             .padding(.horizontal, 18)
@@ -89,10 +114,10 @@ struct MainListView: View {
         VStack {
             Spacer()
             HStack(spacing: 26) {
-                dockIcon(system: "trash", label: "Sil") {
-                    if let first = voiceNotes.first {
-                        viewModel.deleteNote(first, modelContext: modelContext)
-                    }
+                // Silme artık kart üzerinde uzun basma ile (onaylı) — dock'ta
+                // yanlışlıkla veri kaybını önlemek için sil butonu yok.
+                dockIcon(system: "questionmark.circle", label: "Yardım") {
+                    viewModel.statusMessage = "Notu silmek için karta uzun basın"
                 }
 
                 // Ana kayıt butonu — neon parlayan kırmızı daire.

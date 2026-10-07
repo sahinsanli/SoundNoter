@@ -13,17 +13,20 @@ final class AppState {
     var isSplashFinished: Bool = false
 
     /// Kullanıcı onboarding'i daha önce gördü mü?
+    /// NOT: @Observable bağımlılık takibi stored property'lerde çalışır —
+    /// UserDefaults'u doğrudan okuyan computed property view'ları GÜNCELLEMEZ.
+    /// Bu yüzden stored property + didSet ile persist edilir.
     var hasSeenOnboarding: Bool {
-        get { UserDefaults.standard.bool(forKey: "hasSeenOnboarding") }
-        set { UserDefaults.standard.set(newValue, forKey: "hasSeenOnboarding") }
+        didSet { UserDefaults.standard.set(hasSeenOnboarding, forKey: "hasSeenOnboarding") }
     }
-
     /// Kullanıcı giriş yapmış mı?
     var isAuthenticated: Bool = false
 
     private var authListener: AuthStateDidChangeListenerHandle?
 
     init() {
+        // Persist edilmiş değeri yükle (ilk açılışta false).
+        hasSeenOnboarding = UserDefaults.standard.bool(forKey: "hasSeenOnboarding")
         setupFirebaseListener()
     }
 

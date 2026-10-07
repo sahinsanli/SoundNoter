@@ -18,6 +18,7 @@ struct NoteDetailView: View {
 
     /// Şu an parlayan kelime indeksi.
     @State private var activeWordIndex: Int = -1
+    @State private var showDeleteConfirmation = false
 
     var body: some View {
         ScrollView {
@@ -38,17 +39,27 @@ struct NoteDetailView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button(role: .destructive) {
-                    viewModel.deleteNote(voiceNote, modelContext: modelContext)
-                    dismiss()
+                    showDeleteConfirmation = true
                 } label: {
                     Image(systemName: "trash")
                         .foregroundStyle(Theme.appRed)
                 }
             }
         }
+        .confirmationDialog("Notu sil", isPresented: $showDeleteConfirmation, titleVisibility: .visible) {
+            Button("Sil", role: .destructive) {
+                viewModel.deleteNote(voiceNote, modelContext: modelContext)
+                dismiss()
+            }
+            Button("Vazgeç", role: .cancel) {}
+        } message: {
+            Text("Bu not ve ses dosyası kalıcı olarak silinecek.")
+        }
         .onAppear {
             timestampedWords = SpeechTimestampService.decode(from: voiceNote.timestampedWordsJSON)
-            viewModel.player.currentTimeHandler = { [self] time in
+            // struct View'da [self] capture güvenilmez — handler'ı state'e
+            // dokunan bağımsız bir closure olarak kur.
+            viewModel.player.currentTimeHandler = { time in
                 updateActiveWord(for: time)
             }
         }

@@ -1,25 +1,30 @@
 import Foundation
 import AVFoundation
+import Observation
 
 /// Kaydedilen sesi oynatır, duraklatır, durdurur ve ileri/geri sarar.
 /// Apple Music tarzı çalar arayüzünün servis tarafı.
-final class AudioPlayerService: NSObject, ObservableObject {
+/// @Observable: VoiceNoteViewModel (@Observable) üzerinden izlenirken
+/// değişiklikler SwiftUI view'lara ulaşır (@Published + ObservableObject karışımı değil).
+@Observable
+final class AudioPlayerService {
 
     private var player: AVAudioPlayer?
+    @ObservationIgnored private var timeTimer: Timer?
+    @ObservationIgnored private var playerDelegate: PlayerDelegate?
 
     /// Oynatılan dosyanın adı.
     private(set) var currentFileName: String?
 
     /// Oynatma aktif mi (duraklatılmamış).
-    @Published private(set) var isPlaying: Bool = false
+    private(set) var isPlaying: Bool = false
 
     /// Geçen süre (saniye).
-    @Published private(set) var currentTime: TimeInterval = 0
+    private(set) var currentTime: TimeInterval = 0
 
     /// Toplam süre (saniye).
-    @Published private(set) var duration: TimeInterval = 0
+    private(set) var duration: TimeInterval = 0
 
-    private var timeTimer: Timer?
     /// Karaoke takibi: oynatma süresi değiştikçe çağrılır (NoteDetailView dinler).
     var currentTimeHandler: ((TimeInterval) -> Void)?
 
@@ -36,7 +41,9 @@ final class AudioPlayerService: NSObject, ObservableObject {
             try session.setActive(true)
 
             let player = try AVAudioPlayer(contentsOf: url)
-            player.delegate = self
+            let delegate = PlayerDelegate(owner: self)
+            player.delegate = delegate
+            playerDelegate = delegate
             player.play()
 
             self.player = player
@@ -80,6 +87,13 @@ final class AudioPlayerService: NSObject, ObservableObject {
         currentTime = clamped
     }
 
+    /// Oynatma bitti — PlayerDelegate köprüsünden çağrılır.
+    func handlePlaybackFinished() {
+        isPlaying = false
+        currentTime = 0
+        stopTimeTimer()
+    }
+
     // MARK: - Süre takibi
 
     private func startTimeTimer() {
@@ -97,10 +111,18 @@ final class AudioPlayerService: NSObject, ObservableObject {
     }
 }
 
-extension AudioPlayerService: AVAudioPlayerDelegate {
+/// @Observable class AVAudioPlayerDelegate olamayacağı için bitiş
+/// sinyalini service'e ileten küçük köprü.
+private final class PlayerDelegate: NSObject, AVAudioPlayerDelegate {
+    weak var owner: AudioPlayerService?
+
+    init(owner: AudioPlayerService) {
+        self.owner = owner
+    }
+
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        isPlaying = false
-        currentTime = 0
-        stopTimeTimer()
+        Task { @MainActor in
+            owner?.handlePlaybackFinished()
+        }
     }
 }

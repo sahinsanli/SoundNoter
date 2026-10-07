@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00F196ABF3DD9810421C0DB6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D831D5184B3FAD4F27B784F /* ContentView.swift */; };
+		07ED7EF93E9CDF4ABD688970 /* NavigationFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D944AF41BA87178DE7C67B55 /* NavigationFlowTests.swift */; };
 		10AA8F3A952CE926A2F62E60 /* AudioFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1D361E60EC29C893064F75 /* AudioFileManager.swift */; };
 		11A0EA6078C37974471721A3 /* LoginOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3007664C24BAD8A0335138D0 /* LoginOptionsView.swift */; };
 		1FAD43406A922A59DE56BAF5 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8D137CCBD915D950546B6 /* OnboardingView.swift */; };
@@ -33,7 +34,18 @@
 		F641910B3E40DE20F406B50B /* NoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DAE6D2FB4A3AE62F0D8874 /* NoteDetailView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		E02685F6F700DAC665EFE1C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80EC5C48648C7439096C6842 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E08DFF0DD848284BB2475AA;
+			remoteInfo = SoundNoter;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		006622F8710032B0B5FEC03F /* SoundNoterUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SoundNoterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1808C72DCFA3239884D05684 /* VoiceNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceNote.swift; sourceTree = "<group>"; };
 		1B0C995EF5A6DB05702D0F3A /* AIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIService.swift; sourceTree = "<group>"; };
 		20E2FA0BA480416539854B2C /* EmailAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthView.swift; sourceTree = "<group>"; };
@@ -54,6 +66,7 @@
 		C4DAE6D2FB4A3AE62F0D8874 /* NoteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailView.swift; sourceTree = "<group>"; };
 		C52C6306FBF8DDB5274ECC95 /* MainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListView.swift; sourceTree = "<group>"; };
 		D85948F2D4BB780FC2FC0207 /* SoundNoter.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SoundNoter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D944AF41BA87178DE7C67B55 /* NavigationFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationFlowTests.swift; sourceTree = "<group>"; };
 		E2F9CCFCA62B692A5ADD71B7 /* SoundNoterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundNoterApp.swift; sourceTree = "<group>"; };
 		EC3A5644C1B921AF045B523B /* VoiceNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceNoteViewModel.swift; sourceTree = "<group>"; };
 		F4F66D5EF4284842D740075F /* AudioPlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerService.swift; sourceTree = "<group>"; };
@@ -99,8 +112,17 @@
 			isa = PBXGroup;
 			children = (
 				D85948F2D4BB780FC2FC0207 /* SoundNoter.app */,
+				006622F8710032B0B5FEC03F /* SoundNoterUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		BA689CD0F0AC057B9B00E65F /* SoundNoterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D944AF41BA87178DE7C67B55 /* NavigationFlowTests.swift */,
+			);
+			path = SoundNoterUITests;
 			sourceTree = "<group>";
 		};
 		C22E19BD8F27BCFC283457CE /* Models */ = {
@@ -116,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				F121B8013E86598335AF35F8 /* SoundNoter */,
+				BA689CD0F0AC057B9B00E65F /* SoundNoterUITests */,
 				687464A5EEA6F1B3B74BEE95 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -175,6 +198,24 @@
 			productReference = D85948F2D4BB780FC2FC0207 /* SoundNoter.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5DCF5C96FB7715ADBC0009EB /* SoundNoterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F47A59E1AAE8A262F8006D4F /* Build configuration list for PBXNativeTarget "SoundNoterUITests" */;
+			buildPhases = (
+				CCF7A9499B53D7B5797ADB6A /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1237B9951C5125B0C22540E7 /* PBXTargetDependency */,
+			);
+			name = SoundNoterUITests;
+			packageProductDependencies = (
+			);
+			productName = SoundNoterUITests;
+			productReference = 006622F8710032B0B5FEC03F /* SoundNoterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -186,6 +227,9 @@
 				TargetAttributes = {
 					2E08DFF0DD848284BB2475AA = {
 						ProvisioningStyle = Automatic;
+					};
+					5DCF5C96FB7715ADBC0009EB = {
+						TestTargetID = 2E08DFF0DD848284BB2475AA;
 					};
 				};
 			};
@@ -207,6 +251,7 @@
 			projectRoot = "";
 			targets = (
 				2E08DFF0DD848284BB2475AA /* SoundNoter */,
+				5DCF5C96FB7715ADBC0009EB /* SoundNoterUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -251,9 +296,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CCF7A9499B53D7B5797ADB6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07ED7EF93E9CDF4ABD688970 /* NavigationFlowTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		1237B9951C5125B0C22540E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E08DFF0DD848284BB2475AA /* SoundNoter */;
+			targetProxy = E02685F6F700DAC665EFE1C5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		0416CBFF7B748DE76DAD44C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_ALLOWED = NO;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sahinsanli.SoundNoterUITests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.10;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SoundNoter;
+			};
+			name = Debug;
+		};
 		B97895BAB2D2F69A849FC618 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -392,6 +471,24 @@
 			};
 			name = Debug;
 		};
+		DB9DE05FE92437637B4476EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_ALLOWED = NO;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sahinsanli.SoundNoterUITests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.10;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SoundNoter;
+			};
+			name = Release;
+		};
 		F7564123174E9A1D2ED62ABA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -428,6 +525,15 @@
 			buildConfigurations = (
 				D5EAF541333817A02EE95651 /* Debug */,
 				CE816A33C20848737EECD160 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F47A59E1AAE8A262F8006D4F /* Build configuration list for PBXNativeTarget "SoundNoterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0416CBFF7B748DE76DAD44C9 /* Debug */,
+				DB9DE05FE92437637B4476EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
